@@ -79,6 +79,11 @@ node * addNode(node * head){
     }
 }
 
+node *deleteNode(node *head){
+    int stdNode;
+    node *p,*q
+}
+
 
 int main(){
     node * head;
