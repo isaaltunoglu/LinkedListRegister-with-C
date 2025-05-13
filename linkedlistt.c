@@ -77,18 +77,41 @@ node * addNode(node * head){
         }
         
     }
+    return head;
 }
 
 node *deleteNode(node *head){
-    int stdNode;
-    node *p,*q
+    int stdNo;
+    node *p,*q;
+    printf("Please Enter student number that will be deleted:  ");
+    scanf("%d",stdNo);
+    p = head;
+    if(p->no==stdNo){
+        head = p->next;
+        free(p);
+    }
+    else{
+        while (p->next != NULL && p->no != stdNo)
+        {
+            q = p;
+            p = p->next;
+        }
+
+        if(p->no == stdNo){
+            q->next = p->next;
+            free(p);
+        }
+        else if(p->next==NULL){
+            printf("no node found to delete");
+        }
+    }
+
 }
 
 
 int main(){
     node * head;
-    head = createList();
-    traverseList(head);
+
 
     return 0;
 }
