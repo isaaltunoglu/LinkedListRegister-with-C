@@ -105,13 +105,37 @@ node *deleteNode(node *head){
             printf("no node found to delete");
         }
     }
-
+    return head;
 }
 
 
 int main(){
     node * head;
+    int selection = 0;
+    printf("1.create List 2.Traverse List 3.Add Node 4.Delete Node 5.Exit\n");
 
+    while(1){
+        printf("Selection [1-5]: ");
+        scanf("%d",&selection);
+
+        switch (selection)
+        {
+        case 1:
+            head = createList();
+            break;
+        case 2:
+            traverseList(head);
+            break;
+        case 3:
+            head = addNode(head);
+            break;
+        case 4:
+            head=deleteNode(head);
+            break;
+        default:
+            break;
+        }
+    }
 
     return 0;
 }
